@@ -6,7 +6,7 @@ $(document).on("ready", function() {
   var source=$('#quake-tmpl').html();
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.78, lng: -122.44},
-    zoom: 8
+    zoom: 2
   });
   $.ajax({
     type:'GET',
@@ -27,26 +27,19 @@ $(document).on("ready", function() {
       //console.log(quake.properties.when);
      var tamplate=Handlebars.compile(source);
      var compiled = tamplate({quake:list});
- $('#info').append(compiled);
-
+     $('#info').append(compiled);
+var qLatLng={lat:0,lng:0};
+   list.forEach(function(q){
+     qLatLng.lat = q.geometry.coordinates[0];
+     qLatLng.lng = q.geometry.coordinates[1];
+    //  console.log(list.length)
+     var marker = new google.maps.Marker({
+       position: qLatLng,
+       map: map,
+     });
+   })
    }//end success
   })//end ajax
 
 
-
-  function initMap() {
-    var myLatLng = {lat: -25.363, lng: 131.044};
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatLng
-    });
-
-    var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: 'Hello World!'
-    });
-  }
-  initMap();
 });
