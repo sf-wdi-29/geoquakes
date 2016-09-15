@@ -33,11 +33,26 @@
           </div>
           <div class="col-md-6">
             <div id="info">
-              <h1>Earthquakes from the past week:</h1>
-              <!-- <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p> -->
+              <h1>Earthquakes from the past week:</h1>        
             </div>
           </div>
         </div>
       </div>
+
+<script id='earthquake-template' type="text/x-handlebars-template">
+   {{#each earthquakes}}
+      <li class="earthquake-item">
+        <br>
+        <strong>Title:</strong> {{properties.title}} <br>
+        <strong>Coordinates:</strong> {{geometry.coordinates}} <br> 
+        <strong>Time:</strong> {{properties.time}}.
+      </li>
+    {{/each}}
+</script>
+
+
+
+
+
   </body>
 </html>
