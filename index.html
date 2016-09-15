@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+
 
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
@@ -27,17 +29,30 @@
   </head>
   <body>
       <div class="container">
+        <h1 class="heading"> Geoquake Project </h1>
+          <h3>Earthquakes from the past week</h3>
+          <hr>
         <div class="row">
           <div class="col-md-6">
             <div id="map"></div>
+            <div id="helper">
+               <h4> Color Codes: </h4>
+              <ul>
+                <li class="earthquake-five"> mag: 4 to 5 </li>
+                <li class="earthquake-six"> mag: 5to 6 </li>
+                <li class="earthquake-seven"> mag: 6 to 7 </li>
+
+              </ul>
+            </div>
           </div>
           <div class="col-md-6">
+
             <div id="info">
-              <h1>Earthquakes from the past week:</h1>
+
               <!-- <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p> -->
               <script id="quake-tmpl"  type="text/x-handlebars-template">
                 {{#each quake}}
-                <p class="earthquake-{{properties.level}}"> {{properties.title}}{{properties.when}}</p>
+                <p class="earthquake-{{properties.level}}"> {{properties.title}} - {{properties.when}}</p>
                 {{/each}}
               </script>
             </div>

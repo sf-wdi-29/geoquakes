@@ -1,16 +1,26 @@
+body {background-color: #1f2e2e;font-family: 'Candal', sans-serif;}
 .container {
   padding-bottom: 50px;
+  margin-top:0px;
+  background-color: #86acac;
+  width:70%;
 }
 
+h1 { text-align: center; letter-spacing: 2px;padding:40px;padding-bottom:20px;color:#fff; font-weight: bolder;}
+h3 { text-align: center;padding-bottom:50px;color:#fff;}
+ul { list-style: none;font-size: 17px;}
+li { margin:20px;display: block; width:170px;padding:10px;text-align: center;}
+#helper{
+  margin:40px; color:#FFF;
+}
 #map {
   height: 600px;
   margin-top: 20px;
 }
-p {font-weight:large;}
-.earthquake-one { color:#339966;}
-.earthquake-two {color:#ffcc00;}
-.earthquake-three {color:#ff6600;}
-.earthquake-four{color:#cc0000;}
-.earthquake-five {color:#990033;}
-.earthquake-six {color:#660033;}
-.earthquake-seven { color: #1a000d;}
+p {padding:10px;}
+
+.earthquake-three {color:#ff9900; background-color: #fff5e6;}
+.earthquake-four{color:#666633;background-color: #f6f6ee;}
+.earthquake-five {color:#996633;background-color: #f9f2ec;}
+.earthquake-six {color:#000066;background-color: #e6e6ff;}
+.earthquake-seven {color:#990033;background-color: #ffe6ee;}

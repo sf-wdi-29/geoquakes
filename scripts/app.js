@@ -6,7 +6,7 @@ $(document).on("ready", function() {
   var source=$('#quake-tmpl').html();
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 37.78, lng: -122.44},
-    zoom: 2
+    zoom: 3
   });
   $.ajax({
     type:'GET',
@@ -22,16 +22,31 @@ $(document).on("ready", function() {
           var totalSec = Math.floor((differenceTravel) / (1000));
           var hours = parseInt( totalSec / 3600 ) % 24;
            q.properties['when']=hours+" hours ago.";
-           var mag=q.properties.mag;
+           var mag=Math.floor(q.properties.mag);
            console.log(mag);
+  switch(mag){
+    case 6:
+        q.properties['level']="seven";
+        break;
+    case 5:
+        q.properties['level']="six";
+        break;
+    case 4:
+        q.properties['level']="five";
+        break;
+    case 3:
+        q.properties['level']="four";
+        break;
 
-           if(mag<7){q.properties['level']="six"}
-            if(mag <6.5){q.properties['level']="five"}
-                 if(mag < 6){ q.properties['level']="four"}
-                  if(mag <5.5){   q.properties['level']="three"}
-                     if(mag <5 ) {q.properties['level']="two"}
-                      if(mag < 4.8 && mag > 4) {q.properties['level']="one"}
-           else {q.properties['level']="seven"}
+
+  }
+          //    if(mag<9){q.properties['level']="six"}
+          // else   if(mag < 6.5){q.properties['level']="five"}
+          //   else if(mag < 6){}
+          //   else  if(mag <5.5){   }
+          //   else     if(mag <5 ) {}
+          //   else      if(mag < 4.8 && mag > 4) {}
+
            console.log(q.properties.level)
       });
       //  console.log(list[0].properties.when);
@@ -39,7 +54,7 @@ $(document).on("ready", function() {
      var tamplate=Handlebars.compile(source);
      var compiled = tamplate({quake:list});
      $('#info').append(compiled);
-     
+
 var qLatLng={lat:0,lng:0};
 
    list.forEach(function(q){
