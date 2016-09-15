@@ -41,9 +41,9 @@
         </div>
       </div>
       <script id="earthquake" type="text/x-handlebars-template">
-        {{#each earthquakeToday}}
-          <li class="quake-list">
-            <p>{{properties.title}} {{properties.time}} {{geometry.coordinates}}</p>
+       {{#each earthquakeToday}}
+         <li class="quake-list">
+            <p><strong>Title: </strong>{{properties.title}}; <strong>Time: </strong>{{properties.time}}; <stong>Location: </stong>{{geometry.coordinates}}</p>
           </li>
         {{/each}}
       </script>
