@@ -1,8 +1,13 @@
-.container {
-  padding-bottom: 50px;
+html, body { 
+	height: 100%; 
+	margin: 0; 
+	padding: 0; 
 }
 
 #map {
-  height: 600px;
-  margin-top: 20px;
+	height: 600px;
+}
+
+li {
+	list-style: none;
 }
