@@ -6,3 +6,11 @@
   height: 600px;
   margin-top: 20px;
 }
+p {font-weight:large;}
+.earthquake-one { color:#339966;}
+.earthquake-two {color:#ffcc00;}
+.earthquake-three {color:#ff6600;}
+.earthquake-four{color:#cc0000;}
+.earthquake-five {color:#990033;}
+.earthquake-six {color:#660033;}
+.earthquake-seven { color: #1a000d;}

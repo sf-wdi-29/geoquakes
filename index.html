@@ -37,7 +37,7 @@
               <!-- <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p> -->
               <script id="quake-tmpl"  type="text/x-handlebars-template">
                 {{#each quake}}
-                <p> {{properties.title}}{{properties.when}}</p>
+                <p class="earthquake-{{properties.level}}"> {{properties.title}}{{properties.when}}</p>
                 {{/each}}
               </script>
             </div>

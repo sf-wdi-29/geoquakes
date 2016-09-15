@@ -22,13 +22,26 @@ $(document).on("ready", function() {
           var totalSec = Math.floor((differenceTravel) / (1000));
           var hours = parseInt( totalSec / 3600 ) % 24;
            q.properties['when']=hours+" hours ago.";
+           var mag=q.properties.mag;
+           console.log(mag);
+
+           if(mag<7){q.properties['level']="six"}
+            if(mag <6.5){q.properties['level']="five"}
+                 if(mag < 6){ q.properties['level']="four"}
+                  if(mag <5.5){   q.properties['level']="three"}
+                     if(mag <5 ) {q.properties['level']="two"}
+                      if(mag < 4.8 && mag > 4) {q.properties['level']="one"}
+           else {q.properties['level']="seven"}
+           console.log(q.properties.level)
       });
       //  console.log(list[0].properties.when);
       //console.log(quake.properties.when);
      var tamplate=Handlebars.compile(source);
      var compiled = tamplate({quake:list});
      $('#info').append(compiled);
+     
 var qLatLng={lat:0,lng:0};
+
    list.forEach(function(q){
      qLatLng.lat = q.geometry.coordinates[0];
      qLatLng.lng = q.geometry.coordinates[1];
