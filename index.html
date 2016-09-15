@@ -29,15 +29,30 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <div id="map"></div>
+            <div id="map">map</div>
           </div>
           <div class="col-md-6">
             <div id="info">
               <h1>Earthquakes from the past week:</h1>
               <!-- <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p> -->
+
             </div>
           </div>
         </div>
       </div>
+
+    <script id="earthquake-display" type="text/x-handlebars-template">
+      {{#each features}}
+      <P>
+        <li class="earthquake">
+          <strong>Earthquake:</strong> {{title}} <BR> 
+          <strong>Time:</strong> {{time}} 
+          <strong>Magnitude:</strong> {{magnitude}} 
+          <strong>Latitude:</strong> {{lat}}
+          <strong>Longitude:</strong> {{long}}
+        </li>
+      </p>
+      {{/each}}
+    </script>
   </body>
 </html>
